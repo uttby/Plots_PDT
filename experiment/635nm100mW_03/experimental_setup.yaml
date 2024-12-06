@@ -1,0 +1,17 @@
+# Mass spectrometry setup
+MS_title: 'interval_2023'
+displayed_data: [
+        "0J",
+        "10J",
+        #"20J",
+        #"30J",
+        #"40J",
+        "50J_2",
+        #"60J",
+        #"70J",
+        #"80J",
+        #"90J",
+        "100J_2",
+        "solv"
+]
+measured_range: [0, 40, 100] # time in s 
