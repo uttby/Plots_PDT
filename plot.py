@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 plt.rcParams.update({'font.size': 15})
 import numpy as np
-
 from concentration_equations import ground_state_concentration
 from concentration_equations import reactive_singlet_oxygen
 from config import experimental_setup
@@ -11,19 +10,11 @@ from config import experimental_setup
 energy_dose =  np.linspace(0, 100, 1001)
 energy_dose_ro =  np.linspace(0, 100, 100001)
 
-# Data for 10 mW
-concentration_data_10mW = {
-    'tag': [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-    'PpIX_value': [9.889152391, 7.660342549, 6.931313123, 5.877294684, 5.231488794, 5.131357055, 4.77342996, 3.68076417, 3.697891957, 3.478524368, 3.232806324],
-    'Ppp_value': [0.331949941, 0.437022391, 0.590843221, 0.731818182, 0.869664032, 0.953985514, 0.984782609, 0.933069822, 0.981653498, 1.278425553, 1.258662708]
-}
+# read data from the csv files
+concentration_data_10mW = pd.read_csv('10mW.csv')
+concentration_data_100mW = pd.read_csv('100mW.csv')
 
-# Data for 100 mW
-concentration_data_100mW = {
-    'tag': [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-    'PpIX_value': [9.786605178, 6.39486166, 5.068994289, 4.123891087, 4.193280632, 3.954589368, 3.84918753, 3.401229684, 3.413526561, 2.981379012, 2.837110237],
-    'Ppp_value': [0.237198063, 0.25256917, 0.327448399, 0.292973202, 0.274967055, 0.296047431, 0.343917431, 0.362582352, 0.368511206, 0.351602984, 0.433728597]
-}
+# specify the optimizated value of mu 
 mu_PpIX100 = 4.3e-05
 mu_Ppp100= 0.00071
 mu_PpIX10 = 3.1e-05
